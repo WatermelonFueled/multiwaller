@@ -1,1 +1,87 @@
-abc
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="David Park">
+	<meta name="description" content="Multiwaller: Correctly sizes your wallpaper for multiple screens">
+	<meta name="keywords" content="Multiwaller,wallpaper,multimonitor,multi-monitor">
+	<meta name="robots" content="noindex,nofollow,noarchive,">
+
+	<title>Multiwaller</title>
+
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<body>
+	<div id="content">
+		<div id="intro">
+			<img src="./images/multiwallerlogo1noborder.png" alt="MultiWaller">
+			<h1>MultiWaller</h1>
+			<div id="about">
+				<h2>What is MultiWaller?</h2>
+				<p>MultiWaller is a tool that edits a wallpaper image to be accurately scaled across multiple screens. It takes into account screen resolutions, pixel densities, relative positioning, and bezel separation to produce a visually appealing wallpaper</p>
+			</div>
+		</div>
+		<div id="setup">
+			<script type="text/javascript">
+				if (window.File && window.FileReader && window.Blob) {
+					//good
+				} else {
+					alert('File API not supported. Please use a different browser.')
+				}
+			</script>
+			<script type="text/javascript">
+				var setup = document.getElementById("setup");
+
+				var screenCountNode = document.createElement("ul");
+				for (var i = 1; i < 10; i++){
+					var li = document.createElement("li");
+					var button = document.createElement("button");
+					screenCountNode.appendChild(li);
+					li.appendChild(button);
+					button.appendChild(document.createTextNode(i));
+					buttonSet(button, i);
+				}
+				setup.appendChild(screenCountNode);
+
+				function buttonSet(button, num){
+					button.addEventListener("click", function(){screenSettings(num);});
+				}
+
+				function screenSettings(count) {
+					var screenSettings = getElementById("screenSettings");
+					var screenCountOld = screenSettings.getAttribute("data-screencount");
+					screenSettings.setAttribute("data-screencount", count);
+					if (count > screenCountOld){
+						addScreen(screenSettings);
+					} else if (count < screenCountOld){
+						removeScreen();
+					} else {
+						//do nothing
+					}
+
+					for (var i = 0; i < count; i++) {
+						setup.appendChild(document.createTextNode("aha"));
+					}
+				}
+
+				function addScreen(screenSettings){
+					var 
+				}
+
+
+			</script>
+			<div id="screenSettings" data-screencount="0">
+
+			</div>
+		</div>
+		<div id="upload">
+			<input name="upload" type="file" accept=".jpg,.png">
+		</div>
+
+	</div>
+
+</body>
+
+
+</html>
