@@ -49,30 +49,39 @@
 				}
 
 				function screenSettings(count) {
-					var screenSettings = getElementById("screenSettings");
+					var screenSettings = document.getElementById("screenSettings");
 					var screenCountOld = screenSettings.getAttribute("data-screencount");
-					screenSettings.setAttribute("data-screencount", count);
-					if (count > screenCountOld){
-						addScreen(screenSettings);
-					} else if (count < screenCountOld){
+					
+					while(count>screenCountOld){
+						screenCountOld++;
+						addScreen(screenSettings,screenCountOld);
+					}
+					while(count<screenCountOld){
+						screenCountOld--;
 						removeScreen();
-					} else {
-						//do nothing
 					}
 
-					for (var i = 0; i < count; i++) {
-						setup.appendChild(document.createTextNode("aha"));
-					}
+					screenSettings.setAttribute("data-screencount", count);
 				}
 
-				function addScreen(screenSettings){
-					var 
+				function addScreen(screenSettings,count){
+					var newScreen = document.createElement("div");
+					newScreen.setAttribute("class","screen");
+					var screenId = "screen" + count;
+					newScreen.setAttribute("id",screenId);
+
+					screenSettings.appendChild(newScreen);
 				}
 
+				function removeScreen(screenSettings){
+
+				}
 
 			</script>
-			<div id="screenSettings" data-screencount="0">
+			<div id="screenSettings" data-screencount="1">
+				<div class="screen" id="screen1">
 
+				</div>
 			</div>
 		</div>
 		<div id="upload">
