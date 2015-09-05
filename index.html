@@ -22,12 +22,39 @@
 				<p>MultiWaller is a tool that edits a wallpaper image to be accurately scaled across multiple screens. It takes into account screen resolutions, pixel densities, relative positioning, and bezel separation to produce a visually appealing wallpaper</p>
 			</div>
 		</div>
-		<div id="setup">
-			<div id="screenSettings" data-screencount="0"></div>
+		<div id="app">
+			<ul id="screenCount">
+				<li>
+					<button>1</button>
+				</li>
+			</ul>
+			<form id="userInput">
+				<div id="screenSettings" data-screencount="0">
+					<div class="screen" id="screen1" style="display: none;">
+						<table class="relativePosition">
+							<tr>
+								<td></td>
+								<td>Above<input type="radio" value="above" name="relative1"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Left<input type="radio" value="left" name="relative1"></td>
+								<td>Main</td>
+								<td>Right<input type="radio" value="right" name="relative1"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Below<input type="radio" value="below" name="relative1"></td>
+								<td></td>
+							</tr>
+						</table>
+						W:<input type="number" min="0" max="10000" step="1">
+					</div>
+				</div>
+
+				<input name="image" type="file" accept=".jpg,.png">
+			</form>
 			<script src="javascript/setup.js" type="text/javascript"></script>
-		</div>
-		<div id="upload">
-			<input name="upload" type="file" accept=".jpg,.png">
 		</div>
 		<div id="preview">
 
