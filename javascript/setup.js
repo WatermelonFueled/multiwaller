@@ -26,16 +26,31 @@ function main(){
 		for (var j = 0; j < relativeInputs.length; j++){
 			relativeInputs[j].setAttribute("name",settingRelative);
 		}
+		var settingWidth = "width"+i;
+		var settingHeight = "height"+i;
+		var settingSize = "size"+i;
+		var settingDisX = "distanceX"+i;
+		var settingDisY = "distanceY"+i;
+		var numInputs = screenNew.getElementsByTagName("input");
+		numInputs[4].setAttribute("name",settingWidth);
+		numInputs[5].setAttribute("name",settingHeight);
+		numInputs[6].setAttribute("name",settingSize);
+		numInputs[7].setAttribute("name",settingDisX);
+		numInputs[8].setAttribute("name",settingDisY);
 		screenSettings.appendChild(screenNew);
 	}
-
+	//hide
+	var hide = screenSample.getElementsByClassName("hidden");
+	for (var i = 0; i < hide.length; i++){
+		hide[i].style.display="none";
+	}
 }
 
 function buttonSet(button, num){
-	button.addEventListener("click", function(){screenSettingsDisplay(num);});
+	button.addEventListener("click", function(){settingsDisplayHide(num);});
 }
 
-function screenSettingsDisplay(count) {
+function settingsDisplayHide(count) {
 	var screenCountOld = screenSettings.getAttribute("data-screencount");
 	var screenList = screenSettings.getElementsByClassName("screen");
 	//show more

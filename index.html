@@ -9,7 +9,7 @@
 
 	<title>Multiwaller</title>
 
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<!--<link rel="stylesheet" type="text/css" href="styles/style.css">-->
 </head>
 
 <body>
@@ -31,30 +31,36 @@
 			<form id="userInput">
 				<div id="screenSettings" data-screencount="0">
 					<div class="screen" id="screen1" style="display: none;">
-						<table class="relativePosition">
+						<table class="hidden">
 							<tr>
 								<td></td>
-								<td>Above<input type="radio" value="above" name="relative1"></td>
+								<td>Above<input type="radio" value="above"></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>Left<input type="radio" value="left" name="relative1"></td>
+								<td>Left<input type="radio" value="left"></td>
 								<td>Main</td>
-								<td>Right<input type="radio" value="right" name="relative1"></td>
+								<td>Right<input type="radio" value="right"></td>
 							</tr>
 							<tr>
 								<td></td>
-								<td>Below<input type="radio" value="below" name="relative1"></td>
+								<td>Below<input type="radio" value="below"></td>
 								<td></td>
 							</tr>
 						</table>
-						W:<input type="number" min="0" max="10000" step="1">
+						W:<input type="number" min="0" max="10000" step="1" name="width1">
+						H:<input type="number" min="0" max="10000" step="1" name="height1">
+						Size:<input type="number" min="0" max="999" name="size1"><span class="hidden">
+						Distance-X:<input type="number" min="-999" max="999">
+						Distance-Y:<input type="number" min="-999" max="999"></span>
 					</div>
 				</div>
-
-				<input name="image" type="file" accept=".jpg,.png">
+				<br>
+				<input name="image" type="file" accept=".jpg,.png" required>
+				<button type="submit">Process Image</button>
 			</form>
 			<script src="javascript/setup.js" type="text/javascript"></script>
+			<script src="javascript/process.js" type="text/javascript"></script>
 		</div>
 		<div id="preview">
 
